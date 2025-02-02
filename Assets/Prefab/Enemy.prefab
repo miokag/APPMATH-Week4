@@ -100,3 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f4f7a5720140d4b8e988f63d31f699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quadraticSpeed: 2
+  cubicSpeed: 2
+  quadraticJourneyTime: 6
+  cubicJourneyTime: 7
+  controlPointRange: 3

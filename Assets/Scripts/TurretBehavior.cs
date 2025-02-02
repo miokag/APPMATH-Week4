@@ -3,10 +3,10 @@ using UnityEngine;
 public class TurretBehavior : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float turretRange = 5f;
+    [SerializeField] private float turretRange = 3f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpeed = 3f;
-    [SerializeField] private float fireInterval = 1f;
+    [SerializeField] private float fireInterval = 0.7f;
 
     private float fireTimer = 0f;
     private float bulletKillDistance = 0.8f; // Initial bullet kill distance
@@ -29,9 +29,9 @@ public class TurretBehavior : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null || !IsTargetInRange())
         {
-            FindTarget(); // Only search for a new target if there isn't one
+            FindTarget(); // Find a new target only if current one is invalid
         }
 
         if (target != null)
@@ -99,5 +99,17 @@ public class TurretBehavior : MonoBehaviour
         }
 
         target = closestEnemy;
+    }
+
+    private bool IsTargetInRange()
+    {
+        if (target == null) return false;
+
+        // Calculate squared distance to the target
+        float dx = transform.position.x - target.position.x;
+        float dy = transform.position.y - target.position.y;
+        float distanceSquared = dx * dx + dy * dy;
+
+        return distanceSquared <= turretRange * turretRange;
     }
 }

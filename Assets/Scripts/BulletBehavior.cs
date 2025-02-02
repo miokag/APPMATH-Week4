@@ -33,7 +33,7 @@ public class BulletBehavior : MonoBehaviour
         }
 
         // Destroy bullet if it goes out of range (optional, adjust based on game design)
-        if (transform.position.magnitude > 5f)
+        if (transform.position.magnitude > 7f)
         {
             Destroy(gameObject);
         }

@@ -66,7 +66,7 @@ public class ShopBehavior : MonoBehaviour
         if (GameManager.Instance.gold >= speedUpgradeCost)
         {
             GameManager.Instance.gold -= speedUpgradeCost; // Deduct gold
-            turret.UpgradeSpeed(1); // Upgrade speed (e.g., increase by 5)
+            turret.UpgradeSpeed(1); 
             Debug.Log("Speed upgraded!");
             GameManager.Instance.UpdateUI();
         }
@@ -81,7 +81,7 @@ public class ShopBehavior : MonoBehaviour
         if (GameManager.Instance.gold >= rangeUpgradeCost)
         {
             GameManager.Instance.gold -= rangeUpgradeCost; // Deduct gold
-            turret.UpgradeRange(1); // Upgrade range (e.g., increase by 5)
+            turret.UpgradeRange(0.3f); 
             Debug.Log("Range upgraded!");
             GameManager.Instance.UpdateUI();
         }
@@ -96,7 +96,7 @@ public class ShopBehavior : MonoBehaviour
         if (GameManager.Instance.gold >= killDistanceUpgradeCost)
         {
             GameManager.Instance.gold -= killDistanceUpgradeCost; // Deduct gold
-            turret.UpgradeKillDistance(0.2f); // Upgrade kill distance (e.g., increase by 1)
+            turret.UpgradeKillDistance(0.2f); 
             Debug.Log("Kill distance upgraded!");
             GameManager.Instance.UpdateUI();
         }

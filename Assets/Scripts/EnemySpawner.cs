@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-         if(GameManager.Instance.playerHP <= 0) StopSpawning(); 
+        if (GameManager.Instance.playerHP <= 0) StopSpawning();
     }
 
     IEnumerator SpawnQuadraticEnemies()
@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
         {
             // Set random speed for the enemy between min and max
             float moveSpeed = UnityEngine.Random.Range(minMoveSpeed, maxMoveSpeed);
-            movement.Initialize(targetLocation, moveType, moveSpeed);  // Pass the speed to Initialize method
+            movement.Initialize(targetLocation, moveType);  // Initialize movement with target and movement type
         }
     }
 
