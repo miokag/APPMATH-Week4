@@ -1629,7 +1629,7 @@ Transform:
   m_GameObject: {fileID: 688822940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 3, z: 0}
+  m_LocalPosition: {x: -7.79, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1852,7 +1852,7 @@ Transform:
   m_GameObject: {fileID: 802881405}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -4, z: 0}
+  m_LocalPosition: {x: -7.79, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  turretRange: 3
+  turretRange: 4
   bulletPrefab: {fileID: 3329321143451594149, guid: 334b11d705f85414fa568a5497f8767e, type: 3}
   bulletSpeed: 4
   fireInterval: 0.7
@@ -2910,8 +2910,8 @@ MonoBehaviour:
   targetLocation: {fileID: 1023206402}
   quadraticSpawnInterval: 4
   cubicSpawnInterval: 5.5
-  minMoveSpeed: 2
-  maxMoveSpeed: 4
+  minMoveSpeed: 4
+  maxMoveSpeed: 5
 --- !u!4 &2022449006
 Transform:
   m_ObjectHideFlags: 0

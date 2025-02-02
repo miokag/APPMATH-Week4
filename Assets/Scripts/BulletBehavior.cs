@@ -24,15 +24,14 @@ public class BulletBehavior : MonoBehaviour
         if (targetTransform != null && IsTargetHit())
         {
             Debug.Log("Enemy hit!");
-            Destroy(gameObject); // Destroy the bullet
-            Destroy(targetTransform.gameObject); // Destroy the enemy
-            if (GameManager.Instance != null)  // Check if GameManager is properly initialized
+            Destroy(gameObject); 
+            Destroy(targetTransform.gameObject);
+            if (GameManager.Instance != null)  
             {
-                GameManager.Instance.AddGold(5);  // Award gold
+                GameManager.Instance.AddGold(5); 
             }
         }
 
-        // Destroy bullet if it goes out of range (optional, adjust based on game design)
         if (transform.position.magnitude > 7f)
         {
             Destroy(gameObject);
@@ -43,10 +42,13 @@ public class BulletBehavior : MonoBehaviour
     {
         if (targetTransform == null) return false;
 
-        // Calculate the distance between the bullet and the target
-        float distance = Vector2.Distance(transform.position, targetTransform.position);
+        // Calculate squared distance between the bullet and the target
+        float dx = transform.position.x - targetTransform.position.x;
+        float dy = transform.position.y - targetTransform.position.y;
+        float distanceSquared = dx * dx + dy * dy;
 
-        // Check if the bullet has reached its kill distance
-        return distance <= killDistance;
+        // Check if the squared distance is within the threshold squared distance
+        return distanceSquared <= killDistance * killDistance;
     }
+
 }

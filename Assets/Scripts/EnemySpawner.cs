@@ -9,11 +9,11 @@ public class EnemySpawner : MonoBehaviour
     public Transform cubicSpawn;
     public Transform targetLocation;
 
-    public float quadraticSpawnInterval = 2f;
-    public float cubicSpawnInterval = 3f;
+    public float quadraticSpawnInterval = 4f;
+    public float cubicSpawnInterval = 5.5f;
 
-    public float minMoveSpeed = 1f;  // Minimum movement speed
-    public float maxMoveSpeed = 3f;  // Maximum movement speed
+    public float minMoveSpeed = 4f;  
+    public float maxMoveSpeed = 5f;  // Maximum movement speed
 
     private bool isSpawning = true;
 

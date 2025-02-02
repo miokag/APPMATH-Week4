@@ -3,13 +3,13 @@ using UnityEngine;
 public class TurretBehavior : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float turretRange = 3f;
+    [SerializeField] private float turretRange = 4f;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float bulletSpeed = 3f;
+    [SerializeField] private float bulletSpeed = 4f;
     [SerializeField] private float fireInterval = 0.7f;
 
     private float fireTimer = 0f;
-    private float bulletKillDistance = 0.8f; // Initial bullet kill distance
+    private float bulletKillDistance = 0.8f; 
 
     // Upgrade Methods
     public void UpgradeSpeed(float speedIncrease)
@@ -50,7 +50,6 @@ public class TurretBehavior : MonoBehaviour
     {
         if (target == null) return;
 
-        // Calculate squared distance between the turret and the target
         float dx = transform.position.x - target.position.x;
         float dy = transform.position.y - target.position.y;
         float distanceSquared = dx * dx + dy * dy;
@@ -79,7 +78,7 @@ public class TurretBehavior : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Transform closestEnemy = null;
-        float closestDistanceSquared = turretRange * turretRange; // Compare against the squared range
+        float closestDistanceSquared = turretRange * turretRange;
 
         foreach (GameObject enemy in enemies)
         {
@@ -105,7 +104,6 @@ public class TurretBehavior : MonoBehaviour
     {
         if (target == null) return false;
 
-        // Calculate squared distance to the target
         float dx = transform.position.x - target.position.x;
         float dy = transform.position.y - target.position.y;
         float distanceSquared = dx * dx + dy * dy;
