@@ -17,7 +17,12 @@ public class BulletBehavior : MonoBehaviour
 
     void Update()
     {
-        // Move the bullet in the direction of the target
+        if (targetTransform != null)
+        {
+            moveDirection = (targetTransform.position - transform.position).normalized; // Homing behavior
+        }
+        
+        // Move the bullet in the direction of the target for Homing Missiles
         transform.position += (Vector3)(moveDirection * moveSpeed * Time.deltaTime);
 
         // Check if the bullet hits the target
